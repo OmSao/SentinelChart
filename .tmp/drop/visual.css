@@ -1,0 +1,61 @@
+.visual-sentinelChartBFDC788B8CFF47158A4F9BFB660DE97D_DEBUG {
+  /*.playPauseButton {
+    position: absolute;
+    top: 140px;
+    left: 50px;
+    background: #f08080;
+    padding-right: 26px;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    margin: 0;
+    padding: 0 12px;
+    width: 60px;
+    cursor: pointer;
+    height: 30px;
+  }*/
+  /*
+  .track,
+  .track-inset,
+  .track-overlay {
+    stroke-linecap: round;
+  }
+
+  .track {
+    stroke: #000;
+    stroke-opacity: 0.3;
+    stroke-width: 8px;
+  }
+
+  .track-inset {
+    stroke: #dcdcdc;
+    stroke-width: 7px;
+  }
+
+  .track-overlay {
+    pointer-events: stroke;
+    stroke-width: 50px;
+    stroke: transparent;
+    cursor: crosshair;
+  }*/
+}
+.visual-sentinelChartBFDC788B8CFF47158A4F9BFB660DE97D_DEBUG .playPauseButton:hover {
+  background-color: #696969;
+}
+.visual-sentinelChartBFDC788B8CFF47158A4F9BFB660DE97D_DEBUG .ticks {
+  font-size: 10px;
+}
+.visual-sentinelChartBFDC788B8CFF47158A4F9BFB660DE97D_DEBUG .handle {
+  fill: #fff;
+  stroke: #000;
+  stroke-opacity: 0.5;
+  stroke-width: 1.25px;
+}
+.visual-sentinelChartBFDC788B8CFF47158A4F9BFB660DE97D_DEBUG p {
+  font-size: 20px;
+  font-weight: bold;
+}
+.visual-sentinelChartBFDC788B8CFF47158A4F9BFB660DE97D_DEBUG p em {
+  background: yellow;
+  padding: 5px;
+}

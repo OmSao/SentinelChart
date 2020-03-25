@@ -1,0 +1,251 @@
+{
+    "supportsHighlight": true,
+    "dataRoles": [
+        {
+            "displayName": "Parent Label",
+            "kind": "GroupingOrMeasure",
+            "name": "parentLabel",
+            "description": "Parent Label will be used for filtering the fields and categorize them at parent level. Example: Division"
+          },
+          {
+            "displayName": "Angular Axis",
+            "kind": "GroupingOrMeasure",
+            "name": "angularAxis",
+            "description": "Values will be plotted across sector. Example: Division, Department etc."
+          },
+          {
+            "displayName": "Radial Axis",
+            "kind": "GroupingOrMeasure",
+            "name": "radialAxis",
+            "description": "Values will be plotted away from center across sector. Example: Risk Proximity."
+          },
+          {
+            "displayName": "Bubble Size",
+            "kind": "GroupingOrMeasure",
+            "name": "bubbleSize",
+            "description": "Size of each data bubble. Example: Risk Rating"
+          },
+          {
+            "displayName": "Bubble Color",
+            "kind": "GroupingOrMeasure",
+            "name": "bubbleColor",
+            "description": "Color of each data bubble. Example: RAG status"
+          },
+          {
+            "displayName": "Bubble Label",
+            "kind": "GroupingOrMeasure",
+            "name": "bubbleLabel",
+            "description": "Label to be written on each data bubble. Example: Risk Rating Score"
+          },
+          {
+            "displayName": "Other Values",
+            "kind": "GroupingOrMeasure",
+            "name": "otherValues",
+            "description": "Any other columns that needs in filtering."
+          }
+    ],
+    "objects": {
+        "settings_Angular_params": {
+            "displayName": "Angular Spread",
+            "properties": {
+                "Weight_Type": {
+                  "displayName": "Choose Angular Spread",
+                  "description": "Select the Weight Spread Type",
+                  "type": {
+                    "enumeration": [{
+                        "displayName": "Uniform Weight",
+                        "value": "uniform",
+                        "description": "Uniform Weight"
+                      },
+                      {
+                        "displayName": "Descending Weight",
+                        "value": "adjust",
+                        "description": "Descending Weight"
+                      }
+                    ]
+                  }
+                }
+              }
+        },
+
+        "xAxis": {
+            "displayName": "X Axis",
+            "properties": {
+                "show": {
+                    "displayName": "Show X Axis",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "padding": {
+                    "displayName": "Padding",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "color": {
+                    "displayName": "Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "yAxis": {
+            "displayName": "Y Axis",
+            "properties": {
+                "show": {
+                    "displayName": "Show Y Axis",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "padding": {
+                    "displayName": "Padding",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "color": {
+                    "displayName": "Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "borders": {
+            "displayName": "Borders",
+            "properties": {
+                "top": {
+                    "displayName": "Top",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "bottom": {
+                    "displayName": "Bottom",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+        "dataColors": {
+            "displayName": "Data Colors",
+            "properties": {
+                "fill": {
+                    "displayName": "Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+    
+
+        
+
+        "dataPoint": {
+            "displayName": "Data colors",
+            "properties": {
+                "defaultColor": {
+                    "displayName": "Default color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "showAllDataPoints": {
+                    "displayName": "Show all",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fill": {
+                    "displayName": "Fill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fillRule": {
+                    "displayName": "Color saturation",
+                    "type": {
+                        "fill": {}
+                    }
+                },
+                 "fontSize": {
+                    "displayName": "Text Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {"parentLabel": {
+                    "max": 1
+                },
+                "angularAxis": {
+                    "max": 1
+                },
+                "radialAxis": {
+                    "max": 1
+                },
+                "bubbleSize": {
+                    "max": 1
+                },
+                "bubbleColor": {
+                    "max": 1
+                },
+                "bubbleLabel": {
+                    "max": 1
+                }
+            }
+            ],
+            "categorical": {
+                "categories": {
+                    "for": {
+                        "in": "category"
+                    },
+                    "dataReductionAlgorithm": {
+                        "top": {}
+                    }
+                },
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "measure"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

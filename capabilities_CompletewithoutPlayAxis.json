@@ -1,0 +1,319 @@
+{   "supportsHighlight": true,
+
+    "dataRoles": [
+        {
+            "displayName": "Parent Label",
+            "kind": "GroupingOrMeasure",
+            "name": "parentLabel",
+            "description": "Parent Label will be used for filtering the fields and categorize them at parent level. Example: Division"
+          },
+          {
+            "displayName": "Angular Axis",
+            "kind": "GroupingOrMeasure",
+            "name": "angularAxis",
+            "description": "Values will be plotted across sector. Example: Division, Department etc."
+          },
+          {
+            "displayName": "Radial Axis",
+            "kind": "GroupingOrMeasure",
+            "name": "radialAxis",
+            "description": "Values will be plotted away from center across sector. Example: Risk Proximity."
+          },
+          {
+            "displayName": "Bubble Size",
+            "kind": "GroupingOrMeasure",
+            "name": "bubbleSize",
+            "description": "Size of each data bubble. Example: Risk Rating"
+          },
+          {
+            "displayName": "Bubble Color",
+            "kind": "GroupingOrMeasure",
+            "name": "bubbleColor",
+            "description": "Color of each data bubble. Example: RAG status"
+          },
+          {
+            "displayName": "Bubble Label",
+            "kind": "GroupingOrMeasure",
+            "name": "bubbleLabel",
+            "description": "Label to be written on each data bubble. Example: Risk Rating Score"
+          },
+          {
+            "displayName": "Risk Owner",
+            "kind": "GroupingOrMeasure",
+            "name": "riskOwner",
+            "description": "Risk Owner."
+          }
+    ],
+    "drilldown": {
+            "roles": ["angularAxis"]
+    },
+    "objects": {
+        "radialAxis":{
+            "displayName": "Radial Axis",
+            "properties":{
+                "fontSize": {
+                    "displayName": "Text Font Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "color": {
+                    "displayName": "Text Font Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "angularAxis":{
+            "displayName": "Angular Axis",
+            "properties":{
+                "fontSize": {
+                    "displayName": "Text Font Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "color": {
+                    "displayName": "Text Font Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "parentLabel":{
+            "displayName": "Parent Label",
+            "properties":{
+                "fontSize": {
+                    "displayName": "Text Font Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "color": {
+                    "displayName": "Text Font Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "show": {
+                    "displayName": "Show Parent Label",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        },
+
+        "riskBubble":{
+            "displayName": "Risk Bubbles",
+            "properties":{
+                "greenColorLabel": {
+                    "displayName": "Green Bubble Label Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "amberColorLabel": {
+                    "displayName": "Amber Bubble Label Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "redColorLabel": {
+                    "displayName": "Red Bubble Label Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fontSize": {
+                    "displayName": "Label Font Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "bubbleSize": {
+                    "displayName": "Bubble size",
+                    "type": {
+                      "numeric": true
+                    }
+                  },
+                "greenColor": {
+                    "displayName": "Green Bubble Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "amberColor": {
+                    "displayName": "Amber Bubble Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "redColor": {
+                    "displayName": "Red Bubble Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+                
+            }
+        },
+
+        
+
+
+        "dataPoint": {
+            "displayName": "Data colors",
+            "properties": {
+                "defaultColor": {
+                    "displayName": "Default color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "showAllDataPoints": {
+                    "displayName": "Show all",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fill": {
+                    "displayName": "Fill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fillRule": {
+                    "displayName": "Color saturation",
+                    "type": {
+                        "fill": {}
+                    }
+                },
+                 "fontSize": {
+                    "displayName": "Text Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "parentLabel": {
+                        "max": 1
+                    },
+                    "angularAxis": {
+                        "max": 1
+                    },
+                    "radialAxis": {
+                        "max": 1
+                    },
+					"bubbleSize": {
+                        "max": 1
+                    },
+                    "bubbleColor": {
+                        "max": 1
+                    },
+					"bubbleLabel": {
+                        "max": 1
+                    },
+					"riskOwner": {
+                        "max": 1
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "select": [
+                        { "for": {"in": "parentLabel"}},
+                        { "for": { "in": "angularAxis" } },
+                        { "for": { "in": "radialAxis" } },
+                        { "for": { "in": "bubbleSize" } },
+                        { "for": { "in": "bubbleColor" } },
+                        { "for": { "in": "bubbleLabel" } },
+                        { "for": { "in": "riskOwner" } }
+
+                ],
+                    "dataReductionAlgorithm": {
+                        "window": {
+                            "count": 2000
+                        }
+                    }
+                },
+                "values": {
+                    "group": {
+                        "by": "series",
+                        "select":[
+                            
+                            { "for": { "in": "parentLabel" } }
+                        ],
+                        "dataReductionAlgorithm": {
+                            "window": {
+                              "count": 2000
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

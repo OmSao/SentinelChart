@@ -1,0 +1,186 @@
+{
+    "supportsHighlight": true,
+    "dataRoles": [
+        {
+            "displayName": "Axis",
+            "name": "category",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "Values",
+            "name": "measure",
+            "kind": "Measure"
+        }
+    ],
+    "objects": {
+
+        "xAxis": {
+            "displayName": "X Axis",
+            "properties": {
+                "show": {
+                    "displayName": "Show X Axis",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "padding": {
+                    "displayName": "Padding",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "color": {
+                    "displayName": "Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "yAxis": {
+            "displayName": "Y Axis",
+            "properties": {
+                "show": {
+                    "displayName": "Show Y Axis",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "padding": {
+                    "displayName": "Padding",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "color": {
+                    "displayName": "Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "borders": {
+            "displayName": "Borders",
+            "properties": {
+                "top": {
+                    "displayName": "Top",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "bottom": {
+                    "displayName": "Bottom",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+        "dataColors": {
+            "displayName": "Data Colors",
+            "properties": {
+                "fill": {
+                    "displayName": "Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+    
+
+        
+
+        "dataPoint": {
+            "displayName": "Data colors",
+            "properties": {
+                "defaultColor": {
+                    "displayName": "Default color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "showAllDataPoints": {
+                    "displayName": "Show all",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fill": {
+                    "displayName": "Fill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fillRule": {
+                    "displayName": "Color saturation",
+                    "type": {
+                        "fill": {}
+                    }
+                },
+                 "fontSize": {
+                    "displayName": "Text Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "category": {
+                        "max": 1
+                    },
+                    "measure": {
+                        "max": 1
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "for": {
+                        "in": "category"
+                    },
+                    "dataReductionAlgorithm": {
+                        "top": {}
+                    }
+                },
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "measure"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

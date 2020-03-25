@@ -1,0 +1,113 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Axis",
+            "name": "category",
+            "kind": "GroupingOrMeasure"
+        },
+        {
+            "displayName": "Values",
+            "name": "value",
+            "kind": "GroupingOrMeasure"
+        },
+        {
+            "displayName": "Third_Value",
+            "name": "third_value",
+            "kind": "GroupingOrMeasure"
+        }
+    ],
+    "objects": {
+        "dataPoint": {
+            "displayName": "Data colors",
+            "properties": {
+                "defaultColor": {
+                    "displayName": "Default color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "showAllDataPoints": {
+                    "displayName": "Show all",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fill": {
+                    "displayName": "Fill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "fillRule": {
+                    "displayName": "Color saturation",
+                    "type": {
+                        "fill": {}
+                    }
+                },
+                 "fontSize": {
+                    "displayName": "Text Size",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "category": {
+                        "max": 1
+                    },
+                    "value": {
+                        "max": 1
+                    },
+                    "third_value": {
+                        "max": 1
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "select": [
+                        { "for": {"in": "category"}},
+                        { "for": { "in": "value" } },
+                        { "for": { "in": "third_value" } }
+                            
+                
+                ],
+                    "dataReductionAlgorithm": {
+                        "window": {
+                            "count": 2000
+                        }
+                    }
+                },
+                "values": {
+                    "group": {
+                        "by": "series",
+                        "select":[
+                            
+                            { "for": { "in": "third_value" } }
+                        ],
+                        "dataReductionAlgorithm": {
+                            "window": {
+                              "count": 2000
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
